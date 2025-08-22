@@ -26,12 +26,22 @@ public class Locators extends Base {
 		driver.findElement(By.xpath("//button[@id='button-one' and @type='button']")); //and operator in xpath to get more precision
 		driver.findElement(By.xpath("//button[@id='button-one' or @id='button-one-electronics']"));//or operator in xpath
 		
+		//xpath access methods
+		driver.findElement(By.xpath("//div[contains (text(), 'Single Input Field')]//parent::div[@class='card']")); //access element via parent
+		driver.findElement(By.xpath("//div[@class='card']//child::button[@id='button-one']")); //access element via child
+		driver.findElement(By.xpath("//button[@id='button-one']//following::div[@class='card']")); //access via following
+		driver.findElement(By.xpath("//button[@id='button-one']//preceding:: div[@class='card']")); // access via preceding
+		driver.findElement(By.xpath("//button[@id='button-one']//ancestor::div"));
+		driver.findElement(By.xpath("//div[@class='card']//descendant::div"));
 	}
+	
 
 	public static void main(String[] args) {
 		
+		Locators locator = new Locators();
+		locator.initializeBrowser();
+		locator.verifyLocators();
 		
-
 	}
 
 }
