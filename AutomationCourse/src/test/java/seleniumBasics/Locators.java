@@ -20,9 +20,9 @@ public class Locators extends Base {
 		driver.findElement(By.cssSelector("button[id='button-one']"));
 		// /html/body/section/div/div/div[2]/div[2]/div/div[2]/form/div[1]/input
 		//xpath syntax-> //tagname[@attribute='attribute value']
-		driver.findElement(By.xpath("//button[@id='button-one']"));
-		driver.findElement(By.xpath("//button[text()='Show Message']"));
-		driver.findElement(By.xpath("//button[starts-with(text(),'Show ')]"));
+		driver.findElement(By.xpath("//button[@id='button-one']")); //access via attribute
+		driver.findElement(By.xpath("//button[text()='Show Message']")); //access via text()
+		driver.findElement(By.xpath("//button[starts-with(text(),'Show ')]"));// access via starts-with()
 		driver.findElement(By.xpath("//button[@id='button-one' and @type='button']")); //and operator in xpath to get more precision
 		driver.findElement(By.xpath("//button[@id='button-one' or @id='button-one-electronics']"));//or operator in xpath
 		
@@ -31,8 +31,8 @@ public class Locators extends Base {
 		driver.findElement(By.xpath("//div[@class='card']//child::button[@id='button-one']")); //access element via child
 		driver.findElement(By.xpath("//button[@id='button-one']//following::div[@class='card']")); //access via following
 		driver.findElement(By.xpath("//button[@id='button-one']//preceding:: div[@class='card']")); // access via preceding
-		driver.findElement(By.xpath("//button[@id='button-one']//ancestor::div"));
-		driver.findElement(By.xpath("//div[@class='card']//descendant::div"));
+		driver.findElement(By.xpath("//button[@id='button-one']//ancestor::div"));// access via ancestor
+		driver.findElement(By.xpath("//div[@class='card']//descendant::div")); //access via descendant
 	}
 	
 
