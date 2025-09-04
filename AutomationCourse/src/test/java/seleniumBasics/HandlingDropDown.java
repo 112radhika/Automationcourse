@@ -30,6 +30,7 @@ public class HandlingDropDown extends Base {
 		driver.navigate().to("https://www.webdriveruniversity.com/Dropdown-Checkboxes-RadioButtons/index.html");
 		WebElement check = driver.findElement(By.xpath("//input[@value='option-1']"));
 		check.click();
+		System.out.println(check.isSelected());
 	}
 	
 	//Selecting radio button option
@@ -44,8 +45,8 @@ public class HandlingDropDown extends Base {
 		HandlingDropDown dropdown = new HandlingDropDown();
 		dropdown.initializeBrowser();
 		//dropdown.verifyDropdown();
-		//dropdown.verifyCheckbox();
-		dropdown.verifyRadioButton();
+		dropdown.verifyCheckbox();
+		//dropdown.verifyRadioButton();
 
 	}
 

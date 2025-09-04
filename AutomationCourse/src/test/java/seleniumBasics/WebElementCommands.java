@@ -11,6 +11,8 @@ public class WebElementCommands extends Base{
 		WebElement messagebox = driver.findElement(By.id("single-input-field"));//creating WebElement
 		messagebox.sendKeys("Hello Radhika"); //sendKeys() - to input/enter a text
 		WebElement showbutton =  driver.findElement(By.id("button-one"));
+		System.out.println(showbutton.isDisplayed());
+		System.out.println(showbutton.isEnabled());
 		showbutton.click(); // click() - to click on a button, link etc
 		WebElement showmessage = driver.findElement(By.id("message-one"));
 		System.out.println(showmessage.getText()); //getText() - to get the content from a textbox/text
