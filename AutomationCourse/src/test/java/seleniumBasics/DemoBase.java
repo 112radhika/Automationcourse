@@ -30,7 +30,7 @@ public class DemoBase {
 	@AfterMethod
 	public void browserClose() {
 		
-		//driver.close(); close - closes the latest window opened
+		//driver.close(); //close - closes the latest window opened
 		//driver.quit(); //quit - closes all the windows opened
 		
 	}

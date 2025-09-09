@@ -21,7 +21,7 @@ public class TestNGAnnotations {
 	@BeforeMethod
 	public void beforMethod() {
 		
-		System.out.println("Ready to write a test case");
+		System.out.println("Before method - Ready to write a test case");
 	}
 	//Task to be executed after @Test annotation
 	@AfterMethod
