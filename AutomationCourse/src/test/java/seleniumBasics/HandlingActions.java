@@ -13,7 +13,9 @@ public class HandlingActions extends Base {
 	public void verifyRightClick() {
 		WebElement home = driver.findElement(By.xpath("//a[text()='Home']"));
 		Actions action = new Actions(driver);
-		action.contextClick(home).build().perform(); // contextClick - method for right click
+		action.contextClick(home).build().perform(); // build() - Compiles all actions into single step
+		//perform() - Execute the build actions 
+		//contextClick - method for right click
 		
 	}
 	

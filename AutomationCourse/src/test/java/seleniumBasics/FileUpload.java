@@ -35,10 +35,11 @@ public class FileUpload {
 		WebElement uploadpdf = driver.findElement(By.xpath("//a[@id='pickfiles']"));
 		uploadpdf.click();
 		StringSelection stringselect = new StringSelection("C:\\Users\\112ra\\OneDrive\\Documents\\Radhika\\Prepare\\Additional_Git_Topics.pdf");
+		//StringSelection class holds the string (file path) that we want to copy
 		//ToolKit class used to copy the file path to the system clip board
 		//getDefaultToolkit() - gets the toolkit
-		//getSystemClipboard() - gets the clip board from that toolkit
-		//setContents(stringselect,null) - copies your data (stringselect) into the clip board.
+		//getSystemClipboard() - accesses the clip board
+		//setContents(stringselect,null) - copies your string/data (stringselect) into the clip board.
 		
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringselect,null); 
 		Robot robot = new Robot(); // Robot class - automate keyboard and mouse operations.

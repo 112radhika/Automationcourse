@@ -1,55 +1,58 @@
 package testscripts;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import pages.LoginPage;
 import seleniumBasics.DemoBase;
+import utilities.ExcelUtility;
 
 public class LoginTest extends DemoBase {
 	
 	@Test
-	public void verifyUserLoginWithValidCredentials() {
-		
-			
+	public void verifyUserLoginWithValidCredentials() throws IOException {
+		String usernameValue = ExcelUtility.getStringData(0,0,"LoginPage");//getting the usernameValue value from excel
+		String passwordValue = ExcelUtility.getStringData(0,1,"LoginPage");// getting the passwordValue value from excel
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUsernameOnUsernameField();
-		loginpage.enterPasswordOnPasswordField();
+		loginpage.enterUsernameOnUsernameField(usernameValue); //calling methods from pageclass : LoginPage
+		loginpage.enterPasswordOnPasswordField(passwordValue);
 		loginpage.clickOnLoginButton();
 	}
 	
 	@Test
-	public void verifyUserLoginWithValidUsernameAndInvalidPassword() {
+	public void verifyUserLoginWithValidUsernameAndInvalidPassword() throws IOException {
 		
-		WebElement username = driver.findElement(By.id("user-name"));
-		username.sendKeys("test_user");
-		WebElement password = driver.findElement(By.id("password"));
-		password.sendKeys("secret_sauce");
-		WebElement login = driver.findElement(By.id("login-button"));
-		login.click();
+		String usernameValue = ExcelUtility.getStringData(1,0,"LoginPage");
+		String passwordValue = ExcelUtility.getStringData(1,1,"LoginPage");
+		LoginPage loginpage = new LoginPage(driver);
+		loginpage.enterUsernameOnUsernameField(usernameValue); //calling methods from pageclass : LoginPage
+		loginpage.enterPasswordOnPasswordField(passwordValue);
+		loginpage.clickOnLoginButton();
 	}
 	
 	@Test
-	public void verifyuserLoginWithInvalidUsernameAndValidPassword() {
+	public void verifyuserLoginWithInvalidUsernameAndValidPassword() throws IOException {
 		
-		WebElement username = driver.findElement(By.id("user-name"));
-		username.sendKeys("standard_user");
-		WebElement password = driver.findElement(By.id("password"));
-		password.sendKeys("password");
-		WebElement login = driver.findElement(By.id("login-button"));
-		login.click();
+		String usernameValue = ExcelUtility.getStringData(2,0,"LoginPage");
+		String passwordValue = ExcelUtility.getStringData(2,1,"LoginPage");
+		LoginPage loginpage = new LoginPage(driver);
+		loginpage.enterUsernameOnUsernameField(usernameValue); //calling methods from pageclass : LoginPage
+		loginpage.enterPasswordOnPasswordField(passwordValue);
+		loginpage.clickOnLoginButton();
 	}
 	
 	@Test
-	public void verifyUserLoginWithInvalidCredentials() {
+	public void verifyUserLoginWithInvalidCredentials() throws IOException {
 		
-		WebElement username = driver.findElement(By.id("user-name"));
-		username.sendKeys("test_user");
-		WebElement password = driver.findElement(By.id("password"));
-		password.sendKeys("password");
-		WebElement login = driver.findElement(By.id("login-button"));
-		login.click();
+		String usernameValue = ExcelUtility.getStringData(3,0,"LoginPage");
+		String passwordValue = ExcelUtility.getStringData(3,1,"LoginPage");
+		LoginPage loginpage = new LoginPage(driver);
+		loginpage.enterUsernameOnUsernameField(usernameValue); //calling methods from pageclass : LoginPage
+		loginpage.enterPasswordOnPasswordField(passwordValue);
+		loginpage.clickOnLoginButton();
 	}
 
 }
